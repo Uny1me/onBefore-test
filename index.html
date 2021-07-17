@@ -31,8 +31,9 @@
 
         document.onmouseleave = function () {
             //User's mouse has left the page.
-            const { protocol, host } = window.location;
+            const { protocol, host, pathname } = window.location;
             window.innerDocClick = false;
+            // window.location.href = `${protocol}//${host}/${pathname}/about.html`
             // window.location.pathname = '/about'
             // console.log(window.innerDocClick)
             // alert('Dont go')
@@ -43,8 +44,9 @@
                 //Your own in-page mechanism triggered the hash change
 
             } else {
-                const { protocol, host } = window.location;
-                window.location.pathname = '/about.html'
+                const { protocol, host, pathname } = window.location;
+
+                window.location.href = `${protocol}//${host}/${pathname}/about.html`
                 //Browser back button was clicked
 
             }
